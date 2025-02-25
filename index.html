@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>GFG App</title>
+</head>
+
+<!-- dmgkfdkjj -->
+
+<body>
+
+    <div class="container">
+        <div class="left-section">
+            <div class="weather-card">
+                <h1 style="color: green;">
+                    WeatherWise : A Weather App
+                </h1>
+
+                <input type="text" id="city-input" placeholder="Enter city name">
+                <button id="city-input-btn" onclick="weatherFn($('#city-input').val())">
+                    Get Weather
+                </button>
+                <div id="weather-info" class="animate__animated animate__fadeIn">
+                    <h3 id="city-name"></h3>
+                    <p id="date"></p>
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                    <p id="temperature"></p>
+                    <p id="description"></p>
+                    <p id="wind-speed"></p>
+                    <p id="humidity"> Humidity: </p>
+                    <p id="uv-index">UV: </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <!-- Today's Highlights -->
+            <div class="highlights">
+                <h2>Today's Highlights</h2>
+                <div class="highlight-grid">
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-sun" aria-label="UV Index"></i>
+                        </div>
+                        <div class="highlight-name">UV Index</div>
+                        <div class="text-4xl" id="uv-index-highlight"></div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-thermometer-half" aria-label="Feels Like"></i>
+                        </div>
+                        <div class="highlight-name">Feels Like</div>
+                        <div class="text-4xl" id="feels-like-highlight"></div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-tint" aria-label="Humidity"></i>
+                        </div>
+                        <div class="highlight-name">Humidity</div>
+                        <div class="text-4xl" id="humidity-highlight"></div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-wind" aria-label="Wind Speed"></i>
+                        </div>
+                        <div class="highlight-name">Wind Speed</div>
+                        <div class="text-4xl" id="wind-speed-highlight"></div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-eye" aria-label="Visibility"></i>
+                        </div>
+                        <div class="highlight-name">Visibility</div>
+                        <div class="text-4xl" id="visibility-highlight"></div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-tachometer-alt" aria-label="Air Pressure"></i>
+                        </div>
+                        <div class="highlight-name">Air Pressure</div>
+                        <div class="text-4xl" id="pressure-highlight"></div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-cloud-sun" aria-label="Sunrise"></i>
+                        </div>
+                        <div class="highlight-name">Sunrise</div>
+                        <div class="text-4xl" id="sunrise-highlight"></div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-cloud-moon" aria-label="Sunset"></i>
+                        </div>
+                        <div class="highlight-name">Sunset</div>
+                        <div class="text-4xl" id="sunset-highlight"></div>
+                    </div>
+
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-cloud" aria-label="Clouds"></i>
+                        </div>
+                        <div class="highlight-name">Clouds</div>
+                        <div class="text-4xl" id="clouds-highlight"></div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- This Week -->
+            <div class="week-forecast">
+                <h2>This Week</h2>
+                <div class="week-grid">
+                    <div class="week-item">
+                        <div>Wednesday, April 3</div>
+                        <img src="https://storage.googleapis.com/a1aa/image/RRvhmzkaMDwPxvm8LolQhIPfPk2gPxIET4DO2hehtl0.jpg"
+                            alt="Weather icon showing heavy intensity rain">
+                        <div>heavy intensity rain</div>
+                    </div>
+                    <div class="week-item">
+                        <div>Thursday, April 4</div>
+                        <img src="https://storage.googleapis.com/a1aa/image/I8EYgGQPkwZ_XqBYL_N1g3c-BKvqc-Xghe0aMGIs1bg.jpg"
+                            alt="Weather icon showing moderate rain">
+                        <div>moderate rain</div>
+                    </div>
+                    <div class="week-item">
+                        <div>Friday, April 5</div>
+                        <img src="https://storage.googleapis.com/a1aa/image/Z3gwPnU1EbknopcukCbvq_YXqYKmfsySqVoL3Sv_uVI.jpg"
+                            alt="Weather icon showing light rain">
+                        <div>light rain</div>
+                    </div>
+                    <div class="week-item">
+                        <div>Saturday, April 6</div>
+                        <img src="https://storage.googleapis.com/a1aa/image/Z3gwPnU1EbknopcukCbvq_YXqYKmfsySqVoL3Sv_uVI.jpg"
+                            alt="Weather icon showing light rain">
+                        <div>light rain</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <script src="https://momentjs.com/downloads/moment.min.js">
+    </script>
+    <script src="script.js"></script>
+
+
+
+</body>
+
+</html>
